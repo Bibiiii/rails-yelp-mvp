@@ -1,0 +1,17 @@
+.navbar-brand {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 40px;
+}
+
+#my-nav {
+  background-color: #6F1D1B;
+  a {
+    color: white;
+  }
+  li a {
+    color: #894644;
+    &:hover {
+      color: white;
+    }
+  }
+}

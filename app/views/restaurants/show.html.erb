@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<div class="resto-banner">
+  <h1>
+    <%= @restaurant.name %>
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-xs-6">
+      <div class="list">
+        <p>
+          <strong>Address:</strong>
+          <%= @restaurant.address %>
+        </p>
+
+        <p>
+          <strong>Phone number:</strong>
+          <%= @restaurant.phone_number %>
+        </p>
+
+        <p>
+          <strong>Cuisine:</strong>
+          <%= @restaurant.category %>
+        </p>
+
+        <p>
+          <strong>Reviews:</strong>
+          <ul>
+            <% @restaurant.reviews.each do |review| %>
+            <li><%= review.content %></li>
+            <% end %>
+          </ul>
+        </p>
+
+        <%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %> |
+        <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+        <%= link_to 'Back', restaurants_path %>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="banner">
+  <div class="banner-content">
+    <h1>Restaurants</h1>
+  </div>
+</div>
+
+<div class="restaurants-list">
+  <div class="container">
+    <div class="row">
+      <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-6 col-md-3 text-center">
+        <div class="grey-card">
+          <h3><%= restaurant.name %></h3>
+          <p>------------------</p>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+          <p>cuisine: <%= restaurant.category %></p>
+          <%= link_to 'Show', restaurant %> |
+          <%= link_to 'Edit', edit_restaurant_path(restaurant) %> |
+          <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'New Restaurant', new_restaurant_path %>
+</div>
+
+
